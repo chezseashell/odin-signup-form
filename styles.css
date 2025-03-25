@@ -1,20 +1,17 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-
-*:root {
+:root {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     --sansFont: "Open Sans", sans-serif;
     --stdMargin: 30px;
     --layoutWidth: 100%;
-    --contentWidth: 1200px;  
-    --containerLeftWidth: calc(var(--contentWidth) * .66);
+    --contentWidth: 1200px;
+    --containerLeftWidth: calc(var(--contentWidth) * 0.66);
     --containerRightWidth: calc(var(--contentWidth) - var(--containerLeftWidth));
     --grayColor: #908e8e;
     --highlightColor: #343e77;
-
 }
 
 *:focus {
@@ -24,36 +21,36 @@
 body {
     font-family: var(--sansFont);
     font-size: 16px;
+    margin: 0;
+    padding: 0;
 }
 
 .header-div {
     display: flex;
     flex-direction: row;
     max-width: var(--contentWidth);
-    margin-top: var(--stdMargin);
     margin: auto;
-    margin-top: calc(var(--stdMargin)*1.5);
-    width: var(--contentWidth);
+    margin-top: calc(var(--stdMargin) * 1.5);
+    width: 100%;
+    padding: 0 15px;
     justify-content: space-between;
+    align-items: center;
 }
 
 #logo {
     font-size: 1.5rem;
     padding: 0;
-    margin:0;
-    letter-spacing: -.05rem;
-    text-align: center;
+    margin: 0;
+    letter-spacing: -0.05rem;
     display: flex;
-    flex-direction: row;
     align-items: center;
     color: var(--highlightColor);
-
 }
+
 #logo > i {
     padding-right: 5px;
     font-size: 2rem;
     color: var(--highlightColor);
-    
 }
 
 .btn {
@@ -63,7 +60,8 @@ body {
     padding: 0;
     text-align: center;
 }
- .btn>i {
+
+.btn > i {
     padding: 0;
     display: inline-flex;
     margin: 0;
@@ -71,24 +69,20 @@ body {
 }
 
 .btn:hover {
-    /* color: #424141; */
     color: var(--highlightColor);
     cursor: pointer;
 }
 
 #button-dark {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-
     background-color: black;
     color: white;
-    padding:15px 20px 15px 20px;
-    letter-spacing: .02rem;
+    padding: 15px 20px;
+    letter-spacing: 0.02rem;
     font-size: 1.2rem;
     width: 100%;
 }
-
 
 button {
     border: none;
@@ -100,81 +94,66 @@ button {
 
 .header-large {
     font-size: 3.5rem;
-    letter-spacing: -.05rem;
-
+    letter-spacing: -0.05rem;
 }
-
-
 
 .flex-container {
     display: flex;
     width: 100%;
     max-width: var(--contentWidth);
     margin: auto;
-    flex-flow: row wrap;
-    justify-content: center;
-
+    flex-flow: row nowrap; /* Keep side-by-side by default */
+    justify-content: space-between; /* Distribute space better */
+    padding: 0 15px;
 }
 
-
 .container-left {
-    margin-right: calc(var(--stdMargin)*2);
     max-width: var(--containerLeftWidth);
-    /* justify-content: flex-start; */
-    justify-items: flex-start;
+    width: 66%; /* Match the calculated proportion */
+    margin-right: calc(var(--stdMargin) * 2);
     overflow: hidden;
-
-
 }
 
 .container-right {
-    flex: 2 auto;
     max-width: var(--containerRightWidth);
-    justify-content: flex-end;
-
+    width: 33%; /* Match the calculated proportion */
+    flex-shrink: 0; /* Prevent shrinking too much */
 }
 
-
-
 .fieldset-left {
-    max-width: var(--containerLeftWidth);
-    width: 90%;
+    max-width: 100%;
+    width: 100%;
     border: none;
     margin: 0;
     padding: 0;
-    outline: none;
 }
-
 
 #image-div {
     background: url(images/asteroid.png) no-repeat center;
-    background-size:cover;
+    background-size: cover;
     height: 40%;
     width: 100%;
-    margin-top: calc(var(--stdMargin)*5);
+    margin-top: calc(var(--stdMargin) * 5);
     margin-bottom: 0;
-
 }
 
-
 #account-btn-div {
-    margin-top: calc(var(--stdMargin)*2);
+    margin-top: calc(var(--stdMargin) * 2);
+    text-align: center;
 }
 
 .address-div > select {
-    border:none;
+    border: none;
     border-bottom: 2px solid black;
-    margin: 0;
-    margin-bottom: calc(var(--stdMargin) *2);
-    width: 96.5%;
+    margin-bottom: calc(var(--stdMargin) * 2);
+    width: 100%;
     max-width: 100%;
-    border:none;
-    border-bottom: 2px solid black;
     box-sizing: border-box;
+    padding: 5px;
 }
 
 .input-placeholder {
-    color:var(--grayColor);
+    color: var(--grayColor);
     font-size: 1.2rem;
 }
 
@@ -182,17 +161,15 @@ button {
     color: black;
 }
 
-
 .single-input {
-    /* margin:auto; */
-    padding:5px;
+    padding: 5px;
     background: none;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    border:none;
+    border: none;
     border-bottom: 2px solid black;
-    margin-bottom: calc(var(--stdMargin) *2);
+    margin-bottom: calc(var(--stdMargin) * 2);
 }
 
 .twocol-input {
@@ -201,43 +178,39 @@ button {
     gap: 30px;
     max-width: 100%;
     box-sizing: border-box;
-
 }
 
 .twocol-input > input {
     min-height: 25px;
-    width: calc(var(--containerLeftWidth)/2);
+    width: 50%;
     max-width: 100%;
     box-sizing: border-box;
-    border:none;
+    border: none;
     border-bottom: 2px solid black;
-    margin-bottom: calc(var(--stdMargin) *2);
+    margin-bottom: calc(var(--stdMargin) * 2);
 }
-
 
 .subheading-bold {
     font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: -.025rem;
-    margin-bottom: calc(var(--stdMargin)*1.5);
+    letter-spacing: -0.025rem;
+    margin-bottom: calc(var(--stdMargin) * 1.5);
     line-height: 1.5rem;
 }
 
 legend {
-    margin-bottom: calc(var(--stdMargin)*2);
-    font-weight:bold;
+    margin-bottom: calc(var(--stdMargin) * 2);
+    font-weight: bold;
     font-size: 1.2rem;
-    letter-spacing: -.015rem;
+    letter-spacing: -0.015rem;
 }
 
 div ~ p {
     font-size: 1.2rem;
-    color: #6a6868 ;
-    margin-bottom: calc(var(--stdMargin)*2);
+    color: #6a6868;
+    margin-bottom: calc(var(--stdMargin) * 2);
     margin-top: 0 !important;
-
 }
-
 
 .checkbox-div {
     display: flex;
@@ -251,7 +224,6 @@ div ~ p {
     cursor: pointer;
 }
 
-/* Hide default checkbox */
 .checkbox-div input {
     display: none;
 }
@@ -264,7 +236,6 @@ div ~ p {
     cursor: pointer;
 }
 
-/* Create custom checkbox */
 .checkmark {
     height: 25px;
     width: 25px;
@@ -276,45 +247,29 @@ div ~ p {
     background-color: transparent;
 }
 
-/* When the checkbox is checked, add a black background */
 .checkbox-div input:checked ~ label .checkmark {
     background-color: var(--highlightColor);
 }
 
-/* When the checkbox is unchecked, ensure it reverts */
 .checkbox-div input:not(:checked) ~ label .checkmark {
     background-color: transparent;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
     content: "";
     display: none;
 }
 
-/* Show the checkmark when checked */
 .checkbox-div input:checked ~ label .checkmark:after {
     display: block;
 }
 
-/* Style the checkmark/indicator */
 .checkmark:after {
     width: 5px;
     height: 10px;
     border: solid white;
     border-width: 0 2px 2px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-}
-
-/* Show the checkmark when checked */
-.checkbox-div input:checked ~ label .checkmark:after {
-    display: block;
-}
-
-.addres-div {
-    display: block;
 }
 
 #button-dark:hover {
@@ -327,6 +282,107 @@ div ~ p {
     cursor: pointer;
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .container-left {
+        width: 60%; /* Slightly adjust proportions */
+    }
 
+    .container-right {
+        width: 35%;
+    }
 
+    .header-large {
+        font-size: 2.5rem;
+    }
+}
 
+@media (max-width: 768px) {
+    .flex-container {
+        flex-flow: row wrap; /* Stack containers vertically */
+    }
+
+    .container-left {
+        margin-right: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .container-right {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .header-div {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    #logo {
+        margin-bottom: 10px;
+    }
+
+    .header-large {
+        font-size: 2rem;
+    }
+
+    .subheading-bold {
+        font-size: 1.3rem;
+    }
+
+    .twocol-input {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .twocol-input > input {
+        width: 100%;
+    }
+
+    #image-div {
+        height: 150px;
+    }
+
+    #button-dark {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-large {
+        font-size: 1.5rem;
+    }
+
+    .subheading-bold {
+        font-size: 1.1rem;
+    }
+
+    legend {
+        font-size: 1rem;
+    }
+
+    .input-placeholder {
+        font-size: 1rem;
+    }
+
+    .single-input,
+    .twocol-input > input,
+    .address-div > select {
+        margin-bottom: 20px;
+    }
+
+    #button-dark {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+
+    .checkbox-div label {
+        font-size: 1rem;
+    }
+
+    div ~ p {
+        font-size: 1rem;
+    }
+}
