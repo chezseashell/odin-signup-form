@@ -5,26 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup Form</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 <body>
     <div class="header-div">
-        <h1 id="logo">Seaport Museum Membership</h1>
-        <button class="btn" id="upper-login-btn">Log in to your account</button>
+        <h1 id="logo"><i class="material-icons"><span class="material-symbols-outlined">
+            travel_explore</span></i>Space Explorer Membership</h1>
+        <button class="btn" id="upper-login-btn">Log in to your account<i class="material-icons"><span class="material-symbols-outlined">
+            chevron_right
+            </span></i></button>
+
     </div>
     
     <div class="flex-container">
         <div class="container-left">
             <h1 class="header-large">Become a member today!</h1>
-            <p class="subheading-bold">You’re almost there. Tell us about yourself, and confirm payment for your new membership.</p>
+            <p class="subheading-bold">You’re almost there. Tell us about yourself, and create a new membership account.</p>
             <fieldset class="fieldset-left">
                 <legend>Your information</legend>
                 <div class="twocol-input">
-                    <input class="input-placeholder" type="text" name="firstname" placeholder="First name">
-                    <input class="input-placeholder" type="text" name="lastname" placeholder="Last name">
+                    <input class="input-placeholder" type="text" name="firstname" placeholder="First name" required>
+                    <input class="input-placeholder" type="text" name="lastname" placeholder="Last name" required>
                 </div>
-                <input class="input-placeholder single-input" type="email" name="email" placeholder="Email address">
+                <input class="input-placeholder single-input" type="email" name="email" placeholder="Email address" required>
                 <div class="checkbox-div">
-                    <input id="checkbox" type="checkbox" checked="checked">
+                    <input id="checkbox" type="checkbox" checked="checked" >
                     <label for="checkbox">
                         <span class="checkmark"></span>
                         Send me event invitations, program announcements, and information about my member benefits.
@@ -32,11 +38,11 @@
                 </div>
                 <div id="password-div">
                     <form id="signup" class="twocol-input">
-                        <input class="input-placeholder" type="password" name="password" placeholder="Password">
-                        <input class="input-placeholder" type="password" name="password-confirm" placeholder="Confirm password">
+                        <input class="input-placeholder" type="password" name="password" placeholder="Password"  minlength="7"  pattern="^(?=.*[A-Z])(?=.*\d).{7,}$" title="Password must be at least 7 characters long and contain at least 1 uppercase letter and 1 number" required >
+                        <input class="input-placeholder" type="password" name="password-confirm" placeholder="Confirm password" minlength="7" pattern="^(?=.*[A-Z])(?=.*\d).{7,}$" title="Password must be at least 7 characters long and contain at least 1 uppercase letter and 1 number" required>
                     </form>
                 </div>
-                <p>Passwords must contain a minimum of 7 characters, 1 uppercase letter, and 1 number.</p>
+                <p>Passwords must contain a minimum of 7 characters, 1 uppercase letter, and 1 number</p>
                 <legend class="subheading-bold">Mailing address and phone number</legend>
                 <div class="address-div">
                     <input class="input-placeholder single-input" type="text" name="Street-address" placeholder="Street address">
@@ -272,7 +278,7 @@
                         <option value="Ukraine">Ukraine</option>
                         <option value="United Arab Emirates">United Arab Emirates</option>
                         <option value="United Kingdom">United Kingdom</option>
-                        <option value="United States">United States</option>
+                        <option value="United States" selected>United States</option>
                         <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
                         <option value="Uruguay">Uruguay</option>
                         <option value="Uzbekistan">Uzbekistan</option>
@@ -287,13 +293,23 @@
                         <option value="Zambia">Zambia</option>
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
+                    <input class="input-placeholder single-input" type="text" name="City" placeholder="City">
+                    <input class="input-placeholder single-input" type="text" name="Postal-code" placeholder="Postal Code">
+
                 </div>
 
                 
             </fieldset>
         </div>
         <div class="container-right">
-            <p class>this is the right container</p>
+            <div id="image-div">         
+            </div>
+            <div id="account-btn-div">
+                <button id="button-dark">Create Account <i class="material-icons"><span class="material-symbols-outlined">
+                    arrow_forward
+                    </span></i></button>
+                <p>Already have an account? <strong><a id="login-text">Log in</a></strong></p>
+            </div>
         </div>
     </div>
 </body>

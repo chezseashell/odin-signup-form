@@ -13,7 +13,12 @@
     --containerLeftWidth: calc(var(--contentWidth) * .66);
     --containerRightWidth: calc(var(--contentWidth) - var(--containerLeftWidth));
     --grayColor: #908e8e;
+    --highlightColor: #343e77;
 
+}
+
+*:focus {
+    outline: 0;
 }
 
 body {
@@ -27,17 +32,63 @@ body {
     max-width: var(--contentWidth);
     margin-top: var(--stdMargin);
     margin: auto;
+    margin-top: calc(var(--stdMargin)*1.5);
     width: var(--contentWidth);
     justify-content: space-between;
 }
 
-
 #logo {
     font-size: 1.5rem;
-    max-height: 22px;
     padding: 0;
+    margin:0;
     letter-spacing: -.05rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--highlightColor);
+
 }
+#logo > i {
+    padding-right: 5px;
+    font-size: 2rem;
+    color: var(--highlightColor);
+    
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+ .btn>i {
+    padding: 0;
+    display: inline-flex;
+    margin: 0;
+    font-weight: bold;
+}
+
+.btn:hover {
+    /* color: #424141; */
+    color: var(--highlightColor);
+    cursor: pointer;
+}
+
+#button-dark {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: black;
+    color: white;
+    padding:15px 20px 15px 20px;
+    letter-spacing: .02rem;
+    font-size: 1.2rem;
+    width: 100%;
+}
+
 
 button {
     border: none;
@@ -50,6 +101,7 @@ button {
 .header-large {
     font-size: 3.5rem;
     letter-spacing: -.05rem;
+
 }
 
 
@@ -61,7 +113,6 @@ button {
     margin: auto;
     flex-flow: row wrap;
     justify-content: center;
-    border: 2px solid magenta;
 
 }
 
@@ -71,7 +122,6 @@ button {
     max-width: var(--containerLeftWidth);
     /* justify-content: flex-start; */
     justify-items: flex-start;
-    border: 2px solid blue;
     overflow: hidden;
 
 
@@ -79,13 +129,12 @@ button {
 
 .container-right {
     flex: 2 auto;
-    background-color: lightblue;
     max-width: var(--containerRightWidth);
     justify-content: flex-end;
-    opacity:.8;
-    border: 2px solid red;
 
 }
+
+
 
 .fieldset-left {
     max-width: var(--containerLeftWidth);
@@ -93,35 +142,48 @@ button {
     border: none;
     margin: 0;
     padding: 0;
-    border: 1px solid green;
     outline: none;
 }
 
 
+#image-div {
+    background: url(images/asteroid.png) no-repeat center;
+    background-size:cover;
+    height: 40%;
+    width: 100%;
+    margin-top: calc(var(--stdMargin)*5);
+    margin-bottom: 0;
+
+}
 
 
-div > select {
+#account-btn-div {
+    margin-top: calc(var(--stdMargin)*2);
+}
+
+.address-div > select {
     border:none;
     border-bottom: 2px solid black;
+    margin: 0;
     margin-bottom: calc(var(--stdMargin) *2);
-    /* margin:auto; */
-    padding:5px;
-    background: none;
-    margin: auto;
-    width: 100%;
+    width: 96.5%;
     max-width: 100%;
-    border:1px solid red;
-    z-index: 1;
+    border:none;
+    border-bottom: 2px solid black;
     box-sizing: border-box;
 }
 
-select::selection {
+.input-placeholder {
+    color:var(--grayColor);
     font-size: 1.2rem;
 }
 
+#country {
+    color: black;
+}
 
- .single-input {
 
+.single-input {
     /* margin:auto; */
     padding:5px;
     background: none;
@@ -131,7 +193,6 @@ select::selection {
     border:none;
     border-bottom: 2px solid black;
     margin-bottom: calc(var(--stdMargin) *2);
-    
 }
 
 .twocol-input {
@@ -154,12 +215,6 @@ select::selection {
 }
 
 
-
-input::placeholder {
-    color:var(--grayColor);
-    font-size: 1.2rem;
-}
-
 .subheading-bold {
     font-size: 1.5rem;
     font-weight: 700;
@@ -179,6 +234,8 @@ div ~ p {
     font-size: 1.2rem;
     color: #6a6868 ;
     margin-bottom: calc(var(--stdMargin)*2);
+    margin-top: 0 !important;
+
 }
 
 
@@ -211,7 +268,7 @@ div ~ p {
 .checkmark {
     height: 25px;
     width: 25px;
-    border: 3px solid black;
+    border: 3px solid var(--highlightColor);
     margin-right: 15px;
     display: inline-flex;
     align-items: center;
@@ -221,7 +278,7 @@ div ~ p {
 
 /* When the checkbox is checked, add a black background */
 .checkbox-div input:checked ~ label .checkmark {
-    background-color: black;
+    background-color: var(--highlightColor);
 }
 
 /* When the checkbox is unchecked, ensure it reverts */
@@ -249,6 +306,7 @@ div ~ p {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
+}
 
 /* Show the checkmark when checked */
 .checkbox-div input:checked ~ label .checkmark:after {
@@ -258,3 +316,17 @@ div ~ p {
 .addres-div {
     display: block;
 }
+
+#button-dark:hover {
+    background-color: var(--highlightColor);
+    cursor: pointer;
+}
+
+#login-text:hover {
+    color: var(--highlightColor);
+    cursor: pointer;
+}
+
+
+
+
